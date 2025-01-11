@@ -1,8 +1,12 @@
 {
   "name": "fetchquery",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Lightweight JavaScript library for simplified HTTP requests with built-in caching and async support.",
   "main": "index.js",
+  "include": [
+    "fetchquery.d.ts",
+    "**/*.ts"
+  ],
   "scripts": {
     "test": "jest"
   },
