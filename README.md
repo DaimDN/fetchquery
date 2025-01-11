@@ -1,30 +1,22 @@
 # fetchQuery
 
-**fetchQuery** is a lightweight JavaScript library designed to simplify and
-optimize HTTP requests. It is ideal for web applications and API integrations,
-offering asynchronous operations and built-in caching for enhanced performance.
+**fetchQuery** is a lightweight JavaScript library designed to simplify and optimize HTTP requests. It is ideal for web applications and API integrations, offering asynchronous operations and built-in caching for enhanced performance.
 
 ## Key Features
 
-- **Asynchronous Operations:** Utilizes modern `async/await` syntax for
-  non-blocking HTTP requests.
-- **Caching:** Automatically caches GET request responses to reduce network
-  calls and speed up subsequent requests.
-- **Custom Headers and Body:** Supports custom headers and request bodies across
-  all HTTP methods.
-- **Minimal Dependencies:** Designed to be lightweight with minimal external
-  dependencies.
-- **Intuitive API:** Familiar and easy-to-use interface, inspired by popular
-  HTTP clients like Axios.
-- **Browser Compatible:** Works seamlessly across all modern browsers supporting
-  the Fetch API.
+- **Asynchronous Operations:** Utilizes modern `async/await` syntax for non-blocking HTTP requests.
+- **Caching:** Automatically caches GET request responses to reduce network calls and speed up subsequent requests.
+- **Custom Headers and Body:** Supports custom headers and request bodies across all HTTP methods.
+- **Minimal Dependencies:** Designed to be lightweight with minimal external dependencies.
+- **Intuitive API:** Familiar and easy-to-use interface, inspired by popular HTTP clients like Axios.
+- **Browser Compatible:** Works seamlessly across all modern browsers supporting the Fetch API.
 
 ## Installation
 
 Install **fetchQuery** using your preferred package manager:
 
 ```bash
-npm install fetch-query
+npm install fetchquery
 ```
 
 ## Usage
@@ -32,98 +24,97 @@ npm install fetch-query
 ### Basic Asynchronous GET Request
 
 ```javascript
-import fetchQuery from "fetch-query";
+import fetchQuery from 'fetchquery'
 
 async function fetchData() {
-	try {
-		const data = await fetchQuery.get(
-			"https://jsonplaceholder.typicode.com/todos/1",
-		);
-		console.log(data);
-	} catch (error) {
-		console.error("Error fetching data:", error);
-	}
+  try {
+    const data = await fetchQuery.get(
+      'https://jsonplaceholder.typicode.com/todos/1',
+    )
+    console.log(data)
+  } catch (error) {
+    console.error('Error fetching data:', error)
+  }
 }
 
-fetchData();
+fetchData()
 ```
 
 ### GET Request with Custom Headers
 
 ```javascript
 const headers = {
-	Authorization: "Bearer your-token",
-	"Custom-Header": "value",
-};
-
-async function fetchDataWithHeaders() {
-	try {
-		const data = await fetchQuery.get(
-			"https://jsonplaceholder.typicode.com/todos/1",
-			headers,
-		);
-		console.log(data);
-	} catch (error) {
-		console.error("Error:", error);
-	}
+  Authorization: 'Bearer your-token',
+  'Custom-Header': 'value',
 }
 
-fetchDataWithHeaders();
+async function fetchDataWithHeaders() {
+  try {
+    const data = await fetchQuery.get(
+      'https://jsonplaceholder.typicode.com/todos/1',
+      headers,
+    )
+    console.log(data)
+  } catch (error) {
+    console.error('Error:', error)
+  }
+}
+
+fetchDataWithHeaders()
 ```
 
 ### POST Request with Body and Headers
 
 ```javascript
 const postData = {
-	title: "New Todo",
-	completed: false,
-};
-
-const headers = {
-	Authorization: "Bearer your-token",
-	"Content-Type": "application/json",
-};
-
-async function createTodo() {
-	try {
-		const data = await fetchQuery.post(
-			"https://jsonplaceholder.typicode.com/todos",
-			postData,
-			headers,
-		);
-		console.log(data);
-	} catch (error) {
-		console.error("Error:", error);
-	}
+  title: 'New Todo',
+  completed: false,
 }
 
-createTodo();
+const headers = {
+  Authorization: 'Bearer your-token',
+  'Content-Type': 'application/json',
+}
+
+async function createTodo() {
+  try {
+    const data = await fetchQuery.post(
+      'https://jsonplaceholder.typicode.com/todos',
+      postData,
+      headers,
+    )
+    console.log(data)
+  } catch (error) {
+    console.error('Error:', error)
+  }
+}
+
+createTodo()
 ```
 
 ### Caching GET Requests
 
-**fetchQuery** automatically caches GET responses to avoid redundant network
-calls:
+**fetchQuery** automatically caches GET responses to avoid redundant network calls:
 
 ```javascript
 async function fetchDataWithCache() {
-	try {
-		const data1 = await fetchQuery.get(
-			"https://jsonplaceholder.typicode.com/todos/1",
-		);
-		console.log("First Fetch:", data1);
+  try {
+    const data1 = await fetchQuery.get(
+      'https://jsonplaceholder.typicode.com/todos/1',
+    )
+    console.log('First Fetch:', data1)
 
-		// This will use the cached data
-		const data2 = await fetchQuery.get(
-			"https://jsonplaceholder.typicode.com/todos/1",
-		);
-		console.log("From Cache:", data2);
-	} catch (error) {
-		console.error("Error:", error);
-	}
+    // This will use the cached data
+    const data2 = await fetchQuery.get(
+      'https://jsonplaceholder.typicode.com/todos/1',
+    )
+    console.log('From Cache:', data2)
+  } catch (error) {
+    console.error('Error:', error)
+  }
 }
 
-fetchDataWithCache();
+fetchDataWithCache()
 ```
 
 ### Custom Cache Expiration
@@ -132,7 +123,7 @@ Modify the default cache expiration time (default is 1 hour):
 
 ```javascript
 // Set cache expiration time in milliseconds
-fetchQuery.setCacheExpirationTime(30 * 60 * 1000); // 30 minutes
+fetchQuery.setCacheExpirationTime(30 * 60 * 1000) // 30 minutes
 ```
 
 ## API Reference
@@ -156,8 +147,7 @@ fetchQuery.setCacheExpirationTime(30 * 60 * 1000); // 30 minutes
 
 ### Cache Configuration
 
-- **Cache Expiration:** Default is 1 hour. Configurable via
-  `setCacheExpirationTime()`.
+- **Cache Expiration:** Default is 1 hour. Configurable via `setCacheExpirationTime()`.
 - **Bypassing Cache:** Pass `{ skipCache: true }` to force a new request.
 
 ## Contributing
@@ -178,5 +168,4 @@ Please follow our contributing guidelines and coding standards.
 
 ## Credits
 
-Inspired by the Fetch API and libraries like Axios to deliver a seamless HTTP
-request experience.
+Inspired by the Fetch API and libraries like Axios to deliver a seamless HTTP request experience.
