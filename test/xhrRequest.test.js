@@ -1,4 +1,4 @@
-const request = require("./xhrRequest");
+const request = require("../src/modules/xhrRequest");
 
 jest.mock("http", () => ({
 	request: jest.fn((url, options, callback) => {
