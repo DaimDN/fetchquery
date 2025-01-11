@@ -1,7 +1,7 @@
-const fetchQuery = require("./fetchQuery");
-const request = require("./xhrRequest");
+const fetchQuery = require("../src/modules/fetchQuery");
+const request = require("../src/modules/xhrRequest");
 
-jest.mock("./xhrRequest", () =>
+jest.mock("../src/modules/xhrRequest", () =>
 	jest.fn(() => Promise.resolve({ id: 1, userId: 1, title: "Test fetch" })),
 );
 
