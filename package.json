@@ -1,0 +1,26 @@
+{
+	"name": "fetchquery",
+	"version": "1.0.0",
+	"description": "`fetchQuery` is a lightweight, fast, and flexible JavaScript library designed to simplify making HTTP requests. It supports both **synchronous** and **asynchronous** operations and provides a built-in **caching mechanism** to optimize performance. Whether you're building web applications or integrating with APIs, `fetchQuery` makes it easy to send and manage HTTP requests.",
+	"main": "index.js",
+	"scripts": {
+		"test": "jest"
+	},
+	"keywords": [
+		"http",
+		"https",
+		"request",
+		"cache",
+		"fetch",
+		"axios",
+		"node-fetch",
+		""
+	],
+	"author": "Abdul Daim",
+	"license": "MIT",
+	"devDependencies": {
+		"http": "^0.0.1-security",
+		"https": "^1.0.0",
+		"jest": "^29.7.0"
+	}
+}
